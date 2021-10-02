@@ -1,4 +1,10 @@
-import { ADD_ITEM, REMOVE_ITEM, SET_ITEMS } from "./actions";
+import {
+  ADD_ITEM,
+  CHECK_ITEM,
+  REMOVE_ITEM,
+  SET_ITEMS,
+  UNCHECK_ITEM,
+} from "./actions";
 
 export default function todosReducer(state, action) {
   switch (action.type) {
@@ -29,6 +35,36 @@ export default function todosReducer(state, action) {
       return {
         ...state,
         items: state.items.filter((item) => item.id !== action.payload.id),
+      };
+    }
+
+    case CHECK_ITEM: {
+      return {
+        ...state,
+        items: state.items.map((item) => {
+          if (item.id === action.payload.id) {
+            return {
+              ...item,
+              isCompleted: true,
+            };
+          }
+          return item;
+        }),
+      };
+    }
+
+    case UNCHECK_ITEM: {
+      return {
+        ...state,
+        items: state.items.map((item) => {
+          if (item.id === action.payload.id) {
+            return {
+              ...item,
+              isCompleted: false,
+            };
+          }
+          return item;
+        }),
       };
     }
 
