@@ -1,10 +1,28 @@
 import { useEffect } from "react";
 import "./App.css";
+import TodoInput from "./components/AddTodoInput";
+import SearchTodoInput from "./components/SearchTodoInput";
 import TodosList from "./components/TodosList";
 import useTodos from "./stores/todosStore";
 import { SET_ITEMS } from "./stores/todosStore/actions";
 
-const DATA = ["item 1", "item 2", "item 3"];
+const DATA = [
+  {
+    name: "item 1",
+    id: 1,
+    isCompleted: false,
+  },
+  {
+    name: "item 2",
+    id: 2,
+    isCompleted: true,
+  },
+  {
+    name: "item 3",
+    id: 3,
+    isCompleted: false,
+  },
+];
 
 function App() {
   const { state, dispatch } = useTodos();
@@ -19,9 +37,11 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <>
+      <TodoInput />
+      <SearchTodoInput />
       <TodosList items={state.items} />
-    </div>
+    </>
   );
 }
 

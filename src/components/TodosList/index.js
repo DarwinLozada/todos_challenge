@@ -4,7 +4,7 @@ export default function TodosList({ items }) {
   return (
     <ul className="items-container">
       {items.map((item) => (
-        <Todo data={item} />
+        <Todo key={item.id} data={item} />
       ))}
     </ul>
   );

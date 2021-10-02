@@ -8,10 +8,25 @@
   text-align: center;
 }
 
-.items-container li {
+.items-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
+  list-style: none;
+}
+
+.todo_item__text--completed {
+  text-decoration-line: line-through;
 }
 
 .items-container li::first-letter {
