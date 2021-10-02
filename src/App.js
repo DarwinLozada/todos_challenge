@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
 import TodoInput from "./components/AddTodoInput";
-import SearchTodoInput from "./components/SearchTodoInput";
 import TodosList from "./components/TodosList";
 import useTodos from "./stores/todosStore";
 import { SET_ITEMS } from "./stores/todosStore/actions";
@@ -39,7 +38,6 @@ function App() {
   return (
     <>
       <TodoInput />
-      <SearchTodoInput />
       <TodosList items={state.items} />
     </>
   );
