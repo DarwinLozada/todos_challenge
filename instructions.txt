@@ -1,0 +1,12 @@
+In this test you will find the base of a TO DO app. Below you will find the what you 
+need to do in this test.
+
+    - Fix any console error that you find.
+    - Style the app as you want without using any framework.
+    - Fix and structure the code as you like.
+    - Make this app a complete TO DO app by adding the missing features in this
+      base code.
+    - Add this app to git and do regular commits.
+
+You have one day to finish this after you receive the test. When you are done,
+send the full URL to the project and make sure it is a public repository. 
