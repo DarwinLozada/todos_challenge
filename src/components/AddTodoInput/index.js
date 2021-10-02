@@ -19,7 +19,7 @@ export default function AddTodoInput() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="add-todo">
       <label htmlFor="add-todo">Add todo</label>
       <input
         type="text"

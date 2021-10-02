@@ -1,6 +1,14 @@
+@import url("./reset.css");
+
+:root {
+  --main-color: #347ffa;
+  --secondary-color: #0c2f69;
+}
+
 .App {
   min-height: 100vh;
   display: flex;
+  gap: 2rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -8,14 +16,42 @@
   text-align: center;
 }
 
-.items-container {
+.App label {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: var(--main-color);
+}
+
+.App input {
+  width: 100%;
+  border: var(--secondary-color);
+}
+
+.add-todo {
+  display: flex;
+  gap: 1rem;
+}
+
+.todo_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.todo_list__search_input {
+  display: flex;
+  gap: 1rem;
+}
+
+.todo_list__items {
   display: flex;
   flex-direction: column;
 }
 
 .todo-item {
   display: flex;
-  justify-items: center;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
   width: 100%;

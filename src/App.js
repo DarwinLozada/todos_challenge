@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import "./App.css";
 import TodoInput from "./components/AddTodoInput";
 import TodosList from "./components/TodosList";
 import useTodos from "./stores/todosStore";
 import { SET_ITEMS } from "./stores/todosStore/actions";
+import "./styles/App.css";
 
 const DATA = [
   {
@@ -36,10 +36,10 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="App">
       <TodoInput />
       <TodosList items={state.items} />
-    </>
+    </div>
   );
 }
 
