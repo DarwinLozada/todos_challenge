@@ -8,8 +8,10 @@ export default function TodosList({ items }) {
 
   return (
     <div className="todo_list">
-      <div className="todo_list__search_input">
-        <label htmlFor="search-item">Search</label>
+      <div className="input_wrapper todo_list__search_input">
+        <label htmlFor="search-item" className="input_label">
+          Search
+        </label>
         <input
           type="text"
           id="search-item"
@@ -19,9 +21,11 @@ export default function TodosList({ items }) {
       </div>
 
       <ul className="todo_list__items">
-        {renderItems.map((item) => (
-          <Todo key={item.id} data={item} />
-        ))}
+        {renderItems.length > 0 ? (
+          renderItems.map((item) => <Todo key={item.id} data={item} />)
+        ) : (
+          <p className="todo_list__items__no-todos">There are no todo's to do 🥳</p>
+        )}
       </ul>
     </div>
   );

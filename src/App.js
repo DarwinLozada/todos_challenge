@@ -3,7 +3,7 @@ import TodoInput from "./components/AddTodoInput";
 import TodosList from "./components/TodosList";
 import useTodos from "./stores/todosStore";
 import { SET_ITEMS } from "./stores/todosStore/actions";
-import "./styles/App.css";
+
 
 const DATA = [
   {
@@ -37,8 +37,13 @@ function App() {
 
   return (
     <div className="App">
-      <TodoInput />
-      <TodosList items={state.items} />
+      <div className="app_container">
+        <h1 className="app_title">Get things done!</h1>
+        <main className="todos_wrapper">
+          <TodoInput />
+          <TodosList items={state.items} />
+        </main>
+      </div>
     </div>
   );
 }

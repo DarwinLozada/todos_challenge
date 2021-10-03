@@ -1,8 +1,23 @@
-@import url("./reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Spartan:wght@100;200;300;400&display=swap");
 
 :root {
-  --main-color: #347ffa;
-  --secondary-color: #0c2f69;
+  --bg-color: #fefbf3;
+  --sec-bg-color: #f8f0df;
+  --ter-bg-color: #e3e0d8;
+  --primary-color: #79b4b7;
+  --secondary-color: #9d9d9d;
+  --shadow-100: 3px 3px 0px 0px rgba(0, 0, 0, 0.11);
+  --border-radius-xs: 3px;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.app_title {
+  font-size: 3rem;
+  font-family: "Spartan", sans-serif;
 }
 
 .App {
@@ -11,8 +26,8 @@
   gap: 2rem;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #282c34;
+  justify-content: flex-start;
+  background-color: var(--bg-color);
   text-align: center;
 }
 
@@ -23,8 +38,49 @@
 }
 
 .App input {
-  width: 100%;
-  border: var(--secondary-color);
+  display: flex;
+  border: var(--secondary-color) 2px solid;
+  border-radius: 3px;
+  outline: none;
+  transition: transform 0.2 ease;
+  font-size: 1rem;
+  box-shadow: var(--shadow-100);
+}
+
+.App input:focus {
+  outline: var(--primary-color) 1px solid;
+}
+
+button {
+  font-weight: 500;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius-xs);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--sec-bg-color);
+}
+
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.input_label {
+  display: flex;
+}
+
+.app_container {
+  margin-top: 8rem;
+}
+
+.todos_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .add-todo {
@@ -45,20 +101,31 @@
 }
 
 .todo_list__items {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
 
+.todo_list__items__no-todos {
+  margin-top: 1.7rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 .todo-item {
   display: flex;
+  padding: 1rem 0rem;
+  border-radius: var(--border-radius-xs);
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  width: 100%;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
   list-style: none;
+}
+
+.todo_item__text {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .todo_item__text--completed {
@@ -67,4 +134,14 @@
 
 .items-container li::first-letter {
   text-transform: uppercase;
+}
+
+@media (max-width: 400px) {
+  .app_container {
+    margin-top: 5rem;
+  }
+
+  .todos_wrapper {
+    margin: 2rem 1rem 0 1rem;
+  }
 }

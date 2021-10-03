@@ -25,7 +25,7 @@ export default function Todo({ data }) {
   };
 
   return (
-    <li className="todo-item">
+    <li className={`todo-item ${isCompleted && "todo-item--completed"}`}>
       <button onClick={handleCheck}>{isCompleted ? "Uncheck" : "check"}</button>
       <span
         className={`todo_item__text ${

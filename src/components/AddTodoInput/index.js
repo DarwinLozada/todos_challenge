@@ -19,12 +19,15 @@ export default function AddTodoInput() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="add-todo">
-      <label htmlFor="add-todo">Add todo</label>
+    <form onSubmit={handleSubmit} className="input_wrapper add-todo">
+      <label htmlFor="add-todo" className="input_label">
+        Add todo
+      </label>
       <input
         type="text"
         id="add-todo"
         value={text}
+        className="input_label"
         onChange={(e) => setText(e.target.value)}
       ></input>
     </form>
